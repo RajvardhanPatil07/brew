@@ -1110,6 +1110,7 @@ on_request: installed_on_request?, options:)
       formula.specified_path,
     ].concat(build_argv)
 
+    Sandbox.ensure_sandbox_installed!
     if Sandbox.available?
       sandbox = Sandbox.new
       formula.logs.mkpath
@@ -1352,6 +1353,7 @@ on_request: installed_on_request?, options:)
 
     args << post_install_formula_path
 
+    Sandbox.ensure_sandbox_installed!
     if Sandbox.available?
       sandbox = Sandbox.new
       formula.logs.mkpath

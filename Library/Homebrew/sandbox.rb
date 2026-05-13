@@ -74,6 +74,9 @@ class Sandbox
     false
   end
 
+  sig { void }
+  def self.ensure_sandbox_installed!; end
+
   sig { returns(Integer) }
   def self.terminal_ioctl_request
     raise NotImplementedError, "Sandbox is not implemented for this OS."
